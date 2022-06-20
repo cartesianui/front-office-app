@@ -1,0 +1,17 @@
+.header {
+  .img-user {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+  }
+
+  div[dropdownToggle] i.fa {
+    transition: transform 0.25s;
+  }
+
+  div[dropdown].open {
+    div[dropdownToggle] i.fa {
+      transform: rotate(180deg);
+    }
+  }
+}

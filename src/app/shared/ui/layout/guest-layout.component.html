@@ -1,0 +1,27 @@
+<div class="d-flex flex-column" style="min-height: 100vh;">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <div [routerLink]="'/'" class="d-flex btn">
+        <img src="assets/svg/logo.svg" alt="logo" style="height: 32px; margin: 4px;">
+        <span class="navbar-brand fw-bold ms-2">Cartesian UI</span>
+      </div>
+      <div class="d-flex">
+        <button [routerLink]="['account','login']" class="ms-auto btn btn-outline-primary">
+          Login
+        </button>
+        <button [routerLink]="['account','register']" class="mx-2 btn btn-primary">
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+  <div class="w-100 mt-auto bg-light p-4">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>Copyright © 2022 - <a href="http://www.orenda.systems">Orenda Labs</a></div>
+      <a href="http://www.github.com/cartesianui/front-office-app" target="_blank">
+        <i class="fab fa-github fs-4"></i>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+﻿<section class="account-form" [@routerTransition]>
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-xl-10">
+        <div class="card overflow-hidden rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="assets/svg/logo.svg" style="height: 92px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">Cartesian UI</h4>
+                </div>
+
+                <form novalidate autocomplete="off" [formGroup]="formGroup" (ngSubmit)="login()">
+                  <p>Please login to your account</p>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" [ngClass]="getFormClasses(formGroup.controls['email'])"
+                      name="userNameOrEmailAddress" formControlName="email" [placeholder]="'Email' | localize" required
+                      maxlength="256" #emailEl />
+                    <div
+                      *ngIf="formGroup.controls['email'].touched && formGroup.controls['email'].dirty && !formGroup.controls['email'].valid"
+                      class="text-danger text-right mb-3">
+                      <span *ngIf="formGroup.controls['email'].errors.required; else emailPatternError">Please enter an
+                        email!</span>
+                      <ng-template #emailPatternError>Invalid email!</ng-template>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control"
+                      [ngClass]="getFormClasses(formGroup.controls['password'])" name="password"
+                      formControlName="password" [placeholder]="'Password' | localize" required maxlength="32"
+                      #passwordEl />
+                    <div
+                      *ngIf="formGroup.controls['password'].touched && formGroup.controls['password'].dirty && !formGroup.controls['password'].valid"
+                      class="text-danger text-right">
+                      <span *ngIf="formGroup.controls['password'].errors.required; else passLengthError">Please enter a
+                        password!</span>
+                      <ng-template #passLengthError>Password must be at least 6 characters long!</ng-template>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-center pt-1 mb-5 pb-1">
+                    <a class="text-muted" href="#">Forgot password?</a>
+
+                    <button type="submit" class="btn btn-primary btn-block ms-auto"
+                      [disabled]="!formGroup.valid || loading">Login</button>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Don't have an account?</p>
+                    <button [routerLink]="['../register']" type="button" class="btn btn-outline-primary">{{ 'Sign Up!' |
+                      localize }}</button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center right-section bg-primary">
+              <div class="text-white px-3 py-4 p-md-5 m-4 hero-message">
+                <h4 class="mb-4">We are more than just a company</h4>
+                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

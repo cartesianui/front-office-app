@@ -1,0 +1,17 @@
+<div class="sidebar shadow-sm d-flex flex-column flex-shrink-0 p-3 bg-light" #sidebar>
+  <a [routerLink]="'/'" class="d-flex align-items-center btn">
+    <img class="me-2" width="40" height="32" src="assets/svg/logo.svg">
+    <div class="fs-4 fw-bold">Front Office</div>
+  </a>
+  <ul class="sticky-top pt-3 nav nav-pills flex-column mb-auto">
+    <li *ngFor="let item of navItems" class="nav-item">
+      <hr *ngIf="item.divider" class="my-2" />
+      <p *ngIf="item.title" class="ms-3 text-muted mt-2 mb-1">{{item.title.toUpperCase()}}</p>
+      <a *ngIf="!item.divider && !item.title" [routerLink]="item.url" class="nav-link link-dark"
+        routerLinkActive="active">
+        <i [ngClass]="item.icon" class="me-2"></i>
+        {{item.name}}
+      </a>
+    </li>
+  </ul>
+</div>

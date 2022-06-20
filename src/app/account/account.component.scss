@@ -1,0 +1,17 @@
+﻿@import 'src/scss/vendors/_variables.scss';
+
+.account-form {
+  .right-section {
+    border-radius: 0 0 0.3rem 0.3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .account-form {
+    .hero-message {
+      box-shadow: 0 0 4px #0002;
+      background: linear-gradient(45deg, #fff2, #fff4);
+      border-radius: 0.3rem;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.sidebar {
+  min-height: 100vh;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 769px) {
+  .sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    left: -280px;
+    height: 100%;
+    box-sizing: border-box;
+    transition: left 0.5s;
+  }
+
+  .sidebar.open {
+    left: 280px;
+  }
+}

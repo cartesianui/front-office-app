@@ -1,0 +1,8 @@
+{
+  "/v1/*": {
+    "target": "http://api.larabeans.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

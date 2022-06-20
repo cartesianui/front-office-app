@@ -1,0 +1,64 @@
+<form novalidate autocomplete="off" [formGroup]="formGroup" (ngSubmit)="update()">
+  <div class="row">
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary pull-right ml-2" (click)="sync()" [disabled]="loading"><i
+          class="fa fa-save"></i> Save</button>
+    </div>
+    <div class="col-12 mx-auto">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <strong>Edit User </strong>
+            </div>
+            <div class="card-body">
+              <div class="form-group required">
+                <label>Name</label>
+                <input type="text" formControlName="name" class="form-control" [ngClass]="getFormClasses('name')"
+                  placeholder="Name" />
+              </div>
+
+              <div class="form-group required">
+                <label>Gender</label>
+                <div class="input-group">
+                  <select type="text" class="form-control" name="gender" required maxlength="64"
+                    formControlName="gender" [ngClass]="getFormClasses('gender')">
+                    <option selected disabled hidden>Gender...</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group required" *ngIf="formGroup.controls['birth']; let dobControl">
+                <label>Birth Date</label>
+                <div class="input-group">
+                  <input type="date" class="form-control" name="birth" placeholder="Birth Date" formControlName="birth"
+                    [ngClass]="getFormClasses('birth')" />
+                </div>
+                <div *ngIf="dobControl.touched && dobControl.dirty && dobControl.invalid"
+                  class="text-danger text-right">
+                  <span *ngIf="dobControl.errors">
+                    {{ getError(dobControl.errors) }}
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group required" *ngIf="formGroup.controls['password']; let passControl">
+                <label>New Password</label>
+                <input formControlName="password" type="password" class="form-control"
+                  [ngClass]="getFormClasses('password')" placeholder="New Password" />
+                <div *ngIf="passControl.touched && passControl.dirty && passControl.invalid"
+                  class="text-danger text-right">
+                  <span *ngIf="passControl.errors">
+                    {{ getError(passControl.errors) }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
