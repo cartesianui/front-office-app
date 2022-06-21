@@ -2,6 +2,14 @@
   min-height: 100vh;
   height: 100%;
   box-sizing: border-box;
+
+  ul > li > a {
+    .fa {
+      width: 18px;
+      height: 18px;
+      text-align: center;
+    }
+  }
 }
 
 @media (max-width: 769px) {

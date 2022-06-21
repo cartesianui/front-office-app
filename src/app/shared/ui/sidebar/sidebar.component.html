@@ -9,7 +9,7 @@
       <p *ngIf="item.title" class="ms-3 text-muted mt-2 mb-1">{{item.title.toUpperCase()}}</p>
       <a *ngIf="!item.divider && !item.title" [routerLink]="item.url" class="nav-link link-dark"
         routerLinkActive="active">
-        <i [ngClass]="item.icon" class="me-2"></i>
+        <i [ngClass]="item.icon"></i>
         {{item.name}}
       </a>
     </li>
