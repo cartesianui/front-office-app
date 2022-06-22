@@ -2,7 +2,7 @@ import { Injectable, Injector } from '@angular/core';
 import { PlatformLocation, registerLocaleData } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { AppConstants, UiService, TenancyService, TokenService, convertObjectKeysToCamel } from '@cartesianui/ng-axis';
+import { AppConstants, UiService, TenancyService, TokenService, convertObjectKeysToCamel } from '@cartesianui/core';
 import { SessionService } from '@shared/services';
 import { AuthUser } from '@app/account/models';
 import * as moment from 'moment-timezone';

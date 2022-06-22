@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpService, GET, Body, DefaultHeaders, Path, PATCH, Criteria, RequestCriteria } from '@cartesianui/ng-axis';
+import { HttpService, GET, Body, DefaultHeaders, Path, PATCH, Criteria, RequestCriteria } from '@cartesianui/core';
 import { User } from './models/entities/user.model';
 import { SearchUserForm } from './models';
 

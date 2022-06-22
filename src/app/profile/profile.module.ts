@@ -12,7 +12,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
-import { AxisHttpInterceptor } from '@cartesianui/ng-axis';
+import { AxisHttpInterceptor } from '@cartesianui/core';
 import { CommonModule as CartesianCommonModule } from '@cartesianui/common';
 
 import { userFeatureKey, userReducers, UserEffects } from './store';

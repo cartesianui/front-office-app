@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { AuthUser, AuthToken, LoginForm, UserRegistrationForm } from '../models';
-import { type } from '@cartesianui/ng-axis';
+import { type } from '@cartesianui/core';
 
 /**
  * Login Actions

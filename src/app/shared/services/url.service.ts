@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AppConstants } from '@cartesianui/ng-axis';
+import { AppConstants } from '@cartesianui/core';
 import { SessionService } from './session.service';
 
 @Injectable()

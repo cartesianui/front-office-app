@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, APP_INITIALIZER, LOCALE_ID, InjectionToken } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
-import { AppConstants, HttpServiceModule, AxisHttpInterceptor } from '@cartesianui/ng-axis';
+import { AppConstants, HttpServiceModule, AxisHttpInterceptor } from '@cartesianui/core';
 import { CommonModule as CartesianCommonModule } from '@cartesianui/common';
 import { SharedModule } from '@shared/shared.module';
 

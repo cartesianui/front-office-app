@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ListHelper, BaseComponent } from '@cartesianui/common';
-import { RequestCriteria } from '@cartesianui/ng-axis';
+import { RequestCriteria } from '@cartesianui/core';
 import { User, Role, UserRoles, SearchUserForm, SearchRoleForm } from '../../models';
 import { ProfileSandbox } from '../../profile.sandbox';
 import * as moment from 'moment';

@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { type, RequestCriteria } from '@cartesianui/ng-axis';
+import { type, RequestCriteria } from '@cartesianui/core';
 import { User, UserRoles, SearchUserForm, Role, SearchRoleForm } from '../models';
 
 /**

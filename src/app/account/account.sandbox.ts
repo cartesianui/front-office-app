@@ -3,7 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { ValidationService } from '@cartesianui/ng-axis';
+import { ValidationService } from '@cartesianui/core';
 import { Sandbox } from '@cartesianui/common';
 import { AuthUser, LoginForm, UserRegistrationForm } from './models';
 import { AuthService } from './shared';

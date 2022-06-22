@@ -2,7 +2,7 @@ import { Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { RequestCriteria } from '@cartesianui/ng-axis';
+import { RequestCriteria } from '@cartesianui/core';
 import { Sandbox } from '@cartesianui/common';
 import { UserState, userActions, userSelectors } from './store';
 import { getAuthToken } from '../account/store/account.selector';

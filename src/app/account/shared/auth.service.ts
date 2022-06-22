@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppConstants } from '@cartesianui/ng-axis';
-import { TokenService, LogService, UtilsService } from '@cartesianui/ng-axis';
+import { AppConstants } from '@cartesianui/core';
+import { TokenService, LogService, UtilsService } from '@cartesianui/core';
 import { AuthToken, LoginForm } from '../models';
 
 @Injectable()

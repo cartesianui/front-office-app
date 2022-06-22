@@ -34,7 +34,7 @@
               "node_modules/flag-icon-css/css/flag-icon.css",
               "node_modules/sweetalert2/dist/sweetalert2.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/@cartesianui/js-axis/src/libs/freeze-ui/freeze-ui.css",
+              "node_modules/@cartesianui/js/src/libs/freeze-ui/freeze-ui.css",
               "src/scss/style.scss"
             ],
             "stylePreprocessorOptions": {
@@ -60,11 +60,11 @@
               "node_modules/flot/dist/es5/jquery.flot.js",
               "node_modules/jquery-sparkline/jquery.sparkline.min.js",
               "node_modules/chart.js/dist/Chart.min.js",
-              "node_modules/@cartesianui/js-axis/freeze-ui.min.js",
-              "node_modules/@cartesianui/js-axis/axis.min.js",
-              "node_modules/@cartesianui/js-axis/axis.ui.freeze.min.js",
-              "node_modules/@cartesianui/js-axis/axis.message.swal.min.js",
-              "node_modules/@cartesianui/js-axis/axis.notification.swal.min.js"
+              "node_modules/@cartesianui/js/freeze-ui.min.js",
+              "node_modules/@cartesianui/js/axis.min.js",
+              "node_modules/@cartesianui/js/axis.ui.freeze.min.js",
+              "node_modules/@cartesianui/js/axis.message.swal.min.js",
+              "node_modules/@cartesianui/js/axis.notification.swal.min.js"
             ],
             "allowedCommonJsDependencies": ["lodash", "chart.js", "moment-timezone", "moment/min/locales.min"]
           },
@@ -166,7 +166,7 @@
               "node_modules/node-waves/dist/waves.css",
               "node_modules/flag-icon-css/css/flag-icon.css",
               "node_modules/sweetalert2/dist/sweetalert2.css",
-              "node_modules/@cartesianui/js-axis/src/libs/freeze-ui/freeze-ui.css",
+              "node_modules/@cartesianui/js/src/libs/freeze-ui/freeze-ui.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/scss/style.scss"
             ],
@@ -193,7 +193,7 @@
               "node_modules/flot/dist/es5/jquery.flot.js",
               "node_modules/jquery-sparkline/jquery.sparkline.min.js",
               "node_modules/chart.js/dist/Chart.min.js",
-              "node_modules/@cartesianui/js-axis/axis.js"
+              "node_modules/@cartesianui/js/axis.js"
             ]
           }
         },

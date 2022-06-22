@@ -1,4 +1,4 @@
-import { TenancyService, TokenService, convertObjectKeysToCamel } from '@cartesianui/ng-axis';
+import { TenancyService, TokenService, convertObjectKeysToCamel } from '@cartesianui/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Application } from '@shared/models';

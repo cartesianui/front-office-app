@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NotifyService, PermissionCheckerService } from '@cartesianui/ng-axis';
+import { NotifyService, PermissionCheckerService } from '@cartesianui/core';
 import { SessionService } from './session.service';
 
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild } from '@angular/router';
