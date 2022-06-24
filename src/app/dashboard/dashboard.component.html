@@ -1,3 +1,99 @@
-<div class="text-center m-5 p-5">
-  <h2>Dashboard</h2>
+<div class="container px-1">
+  <h4 class="my-5">
+    {{welcomeMessage}} {{user.firstName}}!
+  </h4>
+  <section class="stats">
+    <div class="row my-5">
+      <div class="col-md-6 col-lg-4 my-2 my-lg-0">
+        <div class="card">
+          <div class="card-header d-flex align-items-center justify-content-between">
+            <div>
+              <i class="fa fa-usd me-2"></i>
+              Balance
+            </div>
+            <div>
+              <b>${{currentBalance}}</b>
+              <span [ngClass]="getChangeClass(balanceChange)">
+                {{(balanceChange >= 0 ? '+' : '') + balanceChange}}
+              </span>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas baseChart [datasets]="balanceChart.data.datasets" [labels]="balanceChart.data.labels"
+              [options]="balanceChart.options" [chartType]="balanceChart.type"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 my-2 my-lg-0">
+        <div class="card">
+          <div class="card-header d-flex align-items-center justify-content-between">
+            <div>
+              <i class="fa fa-eye me-2"></i>
+              Views
+            </div>
+            <div>
+              <b>{{currentViews}}</b>
+              <span [ngClass]="getChangeClass(viewsChange)">
+                {{(viewsChange >= 0 ? '+' : '') + viewsChange}}
+              </span>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas baseChart [datasets]="viewsChart.data.datasets" [labels]="viewsChart.data.labels"
+              [options]="viewsChart.options" [chartType]="viewsChart.type"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 my-2 my-lg-0">
+        <div class="card">
+          <div class="card-header d-flex align-items-center justify-content-between">
+            <div>
+              <i class="fa fa-mouse-pointer me-2"></i>
+              Clicks
+            </div>
+            <div>
+              <b>{{currentClicks}}</b>
+              <span [ngClass]="getChangeClass(clicksChange)">
+                {{(clicksChange >= 0 ? '+' : '') + clicksChange}}
+              </span>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas baseChart [datasets]="clicksChart.data.datasets" [labels]="clicksChart.data.labels"
+              [options]="clicksChart.options" [chartType]="clicksChart.type"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="client-table">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-users"></i>
+        Clients
+      </div>
+      <div class="card-body">
+        <table class="table table-hover table-striped border rounded shadow-sm overflow-hidden">
+          <thead class="table-dark border border-dark">
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Tasks</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let client of clients">
+              <td><img [src]="client.picture" width="32" height="32" class="rounded shadow-sm" /></td>
+              <td>{{client.name}}</td>
+              <td>{{client.tasks.completed}}/{{client.tasks.total}}</td>
+              <td>
+                <app-rating hasLabel="true" [rating]="client.rating"></app-rating>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 </div>
