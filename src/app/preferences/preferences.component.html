@@ -1,3 +1,85 @@
-<div class="text-center m-5 p-5">
-  <h2>Preferences</h2>
+<div class="container px-1">
+  <h4 class="my-4">Preferences</h4>
+  <section class="row">
+    <div class="col-lg-6 my-3 my-lg-0">
+      <div class="card">
+        <div class="card-header">
+          <span>Interface</span>
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <div class="card-body">
+          <div>
+            <div>Theme</div>
+            <div class="btn-group" dropdown>
+              <div class="btn btn-light mx-2 dropdown-toggle" dropdownToggle>
+                {{themeName}}
+              </div>
+              <div class="dropdown-menu" *dropdownMenu>
+                <div *ngFor="let t of themes" class="dropdown-item" (click)="interface.theme = t">{{t.name}}</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>Color Scheme</div>
+            <div class="d-flex align-items-center color-scheme-picker">
+              <div *ngFor="let s of colorSchemes"
+                [ngClass]="interface.colorScheme === s.name ? 'shadow-sm border border-dark' : ''"
+                [style]="'background-color: ' + s.color + ';'" (click)="interface.colorScheme = s.name">
+                <span *ngIf="interface.colorScheme === s.name">&#10003;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card my-3">
+        <div class="card-header">
+          <span>Account Settings</span>
+          <i class="fa fa-user-cog"></i>
+        </div>
+        <div class="card-body">
+          <button [routerLink]="['..', 'profile', 'edit']" class="btn btn-outline-dark w-100">
+            Edit User Account
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 my-3 my-lg-0">
+      <div class="card">
+        <div class="card-header">
+          <span>Notifications</span>
+          <i class="fa fa-bell"></i>
+        </div>
+        <div class="card-body">
+          <div>
+            <div>Enabled</div>
+            <div class="form-check form-switch">
+              <input class="form-check-input ms-auto" type="checkbox" [checked]="notifications.enabled"
+                (onCheckedChange)="notifications.enabled = !notifications.enabled" />
+            </div>
+          </div>
+          <div>
+            <div>Chat Notifications</div>
+            <div class="form-check form-switch">
+              <input class="form-check-input ms-auto" type="checkbox" [checked]="notifications.chat"
+                (onCheckedChange)="notifications.chat = !notifications.chat" />
+            </div>
+          </div>
+          <div>
+            <div>Promotions</div>
+            <div class="form-check form-switch">
+              <input class="form-check-input ms-auto" type="checkbox" [checked]="notifications.promotions"
+                (onCheckedChange)="notifications.promotions = !notifications.promotions" />
+            </div>
+          </div>
+          <div>
+            <div>Updates</div>
+            <div class="form-check form-switch">
+              <input class="form-check-input ms-auto" type="checkbox" [checked]="notifications.updates"
+                (onCheckedChange)="notifications.updates = !notifications.updates" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

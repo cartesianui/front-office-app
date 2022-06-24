@@ -1,0 +1,27 @@
+.color-scheme-picker > div {
+  border-radius: 100px;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0 4px;
+  text-align: center;
+
+  > span {
+    cursor: default;
+    color: white;
+  }
+}
+
+.card {
+  .card-header,
+  .card-body > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-body {
+    > div:not(:first-child) {
+      margin-top: 1.25em;
+    }
+  }
+}
