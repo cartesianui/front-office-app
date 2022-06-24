@@ -7,3 +7,4 @@ export * from './validation/app-validation.api';
 export * from './validation/app-validation-summary.component';
 export * from './sidebar/sidebar.component';
 export * from './header/header.component';
+export * from './rating/rating.component';

@@ -1,0 +1,4 @@
+<div class="app-rating d-flex align-items-center">
+  <i *ngFor="let i of icons" [ngClass]="i" [style]="color? ('color: ' + color) : ''"></i>
+  <div *ngIf="hasLabel" class="ms-2 fw-bold">{{rating}}</div>
+</div>
