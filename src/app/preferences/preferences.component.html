@@ -45,36 +45,32 @@
           <span>Notifications</span>
           <i class="fa fa-bell"></i>
         </div>
-        <div class="card-body">
+        <form [formGroup]="formGroup" class="card-body">
           <div>
             <div>Enabled</div>
             <div class="form-check form-switch">
-              <input class="form-check-input ms-auto" type="checkbox" [checked]="notifications.enabled"
-                (onCheckedChange)="notifications.enabled = !notifications.enabled" />
+              <input class="form-check-input ms-auto" type="checkbox" formControlName="enabled" />
             </div>
           </div>
           <div>
             <div>Chat Notifications</div>
             <div class="form-check form-switch">
-              <input class="form-check-input ms-auto" type="checkbox" [checked]="notifications.chat"
-                (onCheckedChange)="notifications.chat = !notifications.chat" />
+              <input class="form-check-input ms-auto" type="checkbox" formControlName="chat" />
             </div>
           </div>
           <div>
             <div>Promotions</div>
             <div class="form-check form-switch">
-              <input class="form-check-input ms-auto" type="checkbox" [checked]="notifications.promotions"
-                (onCheckedChange)="notifications.promotions = !notifications.promotions" />
+              <input class="form-check-input ms-auto" type="checkbox" formControlName="promotions" />
             </div>
           </div>
           <div>
             <div>Updates</div>
             <div class="form-check form-switch">
-              <input class="form-check-input ms-auto" type="checkbox" [checked]="notifications.updates"
-                (onCheckedChange)="notifications.updates = !notifications.updates" />
+              <input class="form-check-input ms-auto" type="checkbox" formControlName="updates" />
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>

@@ -1,14 +1,12 @@
-import { Component, Injector } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { BaseComponent } from '@cartesianui/common';
-
-type ThemeType = 'dark' | 'light' | 'sys';
-type ColorSchemeType = 'blue' | 'purple' | 'green' | 'red';
 
 @Component({
   templateUrl: 'preferences.component.html',
   styleUrls: ['preferences.component.scss']
 })
-export class PreferencesComponent extends BaseComponent {
+export class PreferencesComponent extends BaseComponent implements OnInit {
   interface = {
     theme: 'light',
     colorScheme: 'blue'
@@ -19,6 +17,13 @@ export class PreferencesComponent extends BaseComponent {
     promotions: false,
     updates: true
   };
+
+  formGroup = new FormGroup({
+    enabled: new FormControl(this.notifications.enabled),
+    chat: new FormControl(this.notifications.chat),
+    promotions: new FormControl(this.notifications.promotions),
+    updates: new FormControl(this.notifications.updates)
+  });
 
   themes = [
     { name: 'Light', value: 'light' },
@@ -37,8 +42,23 @@ export class PreferencesComponent extends BaseComponent {
     super(injector);
   }
 
-  get themeName() {
-    return this.themes.find((t) => t.value === this.interface.theme).name;
+  ngOnInit(): void {
+    this.formGroup.controls.enabled.valueChanges.subscribe((v: boolean) => {
+      this.onNotificationsChange(v);
+    });
   }
-  setTheme = (theme: ThemeType) => (this.interface.theme = theme);
+
+  private onNotificationsChange(enabled: boolean) {
+    const ctrls = this.formGroup.controls;
+    console.log(enabled);
+    if (enabled) {
+      ctrls.chat.enable();
+      ctrls.promotions.enable();
+      ctrls.updates.enable();
+    } else {
+      ctrls.chat.disable();
+      ctrls.promotions.disable();
+      ctrls.updates.disable();
+    }
+  }
 }
