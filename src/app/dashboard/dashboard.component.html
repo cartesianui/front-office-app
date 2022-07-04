@@ -2,6 +2,35 @@
   <h4 class="my-5">
     {{welcomeMessage}} {{user.firstName}}!
   </h4>
+  <section class="performance">
+    <div class="row my-5">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-chart-line me-2"></i>
+            Top Earning Skills
+          </div>
+          <div class="card-body">
+            <canvas baseChart [datasets]="skillEarningsChart.data.datasets" [labels]="skillEarningsChart.data.labels"
+              [options]="skillEarningsChart.options" [chartType]="skillEarningsChart.type"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-thumbs-up me-2"></i>
+            Skill Endorsements
+          </div>
+          <div class="card-body">
+            <canvas baseChart [datasets]="skillEndorsementsChart.data.datasets"
+              [labels]="skillEndorsementsChart.data.labels" [options]="skillEndorsementsChart.options"
+              [chartType]="skillEndorsementsChart.type"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="stats">
     <div class="row my-5">
       <div class="col-md-6 col-lg-4 my-2 my-lg-0">

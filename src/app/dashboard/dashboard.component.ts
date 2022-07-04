@@ -20,6 +20,42 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   balances = [100, 200, 150, 250, 350, 300];
   views = [425, 631, 908, 1855, 2995, 4091];
   clicks = [98, 155, 354, 850, 1144, 1712];
+  skillEarnings = [
+    {
+      name: 'Typescript',
+      earnings: 122.23
+    },
+    {
+      name: 'C#',
+      earnings: 59.94
+    },
+    {
+      name: 'Java',
+      earnings: 11.87
+    }
+  ];
+  skillEndorsements = [
+    {
+      name: 'Typescript',
+      endorsements: 37
+    },
+    {
+      name: 'C#',
+      endorsements: 25
+    },
+    {
+      name: 'Java',
+      endorsements: 17
+    },
+    {
+      name: 'GoLang',
+      endorsements: 32
+    },
+    {
+      name: 'Python',
+      endorsements: 36
+    }
+  ];
 
   private getChange = (arr: number[]) => arr[arr.length - 1] - arr[arr.length - 2];
   balanceChange = this.getChange(this.balances);
@@ -30,6 +66,39 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   currentClicks = this.clicks[this.clicks.length - 1];
 
   getChangeClass = (v: number) => (v > 0 ? 'text-success' : v < 0 ? 'text-danger' : 'text-muted');
+
+  skillEarningsChart: ChartConfiguration = {
+    data: {
+      labels: this.skillEarnings.map((s) => s.name),
+      datasets: [
+        {
+          data: this.skillEarnings.map((s) => s.earnings)
+        }
+      ]
+    },
+    type: 'pie',
+    options: {
+      ...chartConfig.options,
+      cutoutPercentage: 80,
+      legend: { display: true, position: 'right' },
+      tooltips: { callbacks: { label: (i, d) => ` $${d.datasets[i.datasetIndex].data[i.index]}` } }
+    }
+  };
+
+  skillEndorsementsChart: ChartConfiguration = {
+    data: {
+      labels: this.skillEndorsements.map((s) => s.name),
+      datasets: [
+        {
+          data: this.skillEndorsements.map((s) => s.endorsements)
+        }
+      ]
+    },
+    type: 'radar',
+    options: {
+      ...chartConfig.options
+    }
+  };
 
   balanceChart: ChartConfiguration = {
     data: {
