@@ -6,6 +6,15 @@ const chartConfig: ChartConfiguration = {
   options: { legend: { display: false } }
 };
 
+const chartColors = ['#0d6efd', '#0d6efdaa', '#0d6efd44'];
+
+const defaultDatasetColors = {
+  backgroundColor: chartColors[2],
+  borderColor: chartColors[0],
+  pointBackgroundColor: chartColors[2],
+  pointHoverBorderColor: chartColors[0]
+};
+
 @Component({
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.scss']
@@ -72,6 +81,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
       labels: this.skillEarnings.map((s) => s.name),
       datasets: [
         {
+          backgroundColor: chartColors,
           data: this.skillEarnings.map((s) => s.earnings)
         }
       ]
@@ -90,6 +100,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
       labels: this.skillEndorsements.map((s) => s.name),
       datasets: [
         {
+          ...defaultDatasetColors,
           data: this.skillEndorsements.map((s) => s.endorsements)
         }
       ]
@@ -106,6 +117,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
       datasets: [
         {
           label: 'Balance',
+          ...defaultDatasetColors,
           data: this.balances
         }
       ]
@@ -120,6 +132,8 @@ export class DashboardComponent extends BaseComponent implements OnInit {
       datasets: [
         {
           label: 'Views',
+          ...defaultDatasetColors,
+          hoverBackgroundColor: chartColors[0],
           data: this.views
         }
       ]
@@ -134,6 +148,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
       datasets: [
         {
           label: 'Clicks',
+          ...defaultDatasetColors,
           data: this.clicks
         }
       ]
