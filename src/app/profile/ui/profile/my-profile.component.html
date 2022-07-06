@@ -1,5 +1,5 @@
-<div class="row justify-content-center">
-  <div class="col-lg-6">
+<div class="container d-flex justify-content-center">
+  <div class="col col-lg-6 my-4 px-2 px-lg-0">
     <div class="card">
       <div class="card-header d-flex align-items-center">
         <strong>Profile</strong>
@@ -10,14 +10,14 @@
           <p>
             <b>{{ user.name }}</b>
           </p>
-          <div class="text-muted row my-2">
-            <div class="col-md-4 d-inline-block"><i class="fa fa-envelope"></i> {{ user.email }}<br /></div>
-            <div class="col-md-4 d-inline-block" *ngIf="user.gender">
+          <div class="text-muted row justify-content-between">
+            <div class="my-2 col-auto"><i class="fa fa-envelope"></i> {{ user.email }}</div>
+            <div class="my-2 col-auto" *ngIf="user.gender">
               <i class="fa" [ngClass]="user.gender === 'male' ? 'fa-male' : 'fa-female'"></i>
               {{ user.gender }}
             </div>
-            <div class="col-md-4 d-inline-block" *ngIf="user.birth"><i class="fa fa-birthday-cake"></i> {{ user.birth
-              }}<br /></div>
+            <div class="my-2 col-auto" *ngIf="user.birth"><i class="fa fa-birthday-cake"></i> {{ user.birth
+              }}</div>
           </div>
         </div>
       </div>
